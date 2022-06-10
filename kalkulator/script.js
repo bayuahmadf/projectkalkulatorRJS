@@ -1,18 +1,24 @@
 /// define element
 
 const numbers = document.querySelectorAll(".number");
-
 const calculatorScreen = document.querySelector('.calculator-screen');
+const decimal = document.querySelector('.decimal');
+const operators = document.querySelectorAll(".operator");
+const equalSign = document.querySelector('.equal-sign');
+const clearBtn = document.querySelector('.all-clear');
+
+/// define  variable
+
+let prevNumber = '';
+let calculationOperator = '';
+let currentNumber = '0';
+
+/// define Function
 
 const updateScreen = (number) => {
     calculatorScreen.value = number;
 };
 
-
-
-let prevNumber = '';
-let calculationOperator = '';
-let currentNumber = '0';
 
 const inputNumber = (number) => {
     if (currentNumber === '0') {
@@ -22,8 +28,6 @@ const inputNumber = (number) => {
     }
 };
 
-const operators = document.querySelectorAll(".operator");
-
 const inputOperator = (operator) => {
     if (calculationOperator === '') {
         prevNumber = currentNumber;
@@ -31,9 +35,6 @@ const inputOperator = (operator) => {
     calculationOperator = operator;
     currentNumber = '';
 };
-
-const equalSign = document.querySelector('.equal-sign');
-
 
 
 const calculate = () => {
@@ -58,15 +59,12 @@ const calculate = () => {
     calculationOperator = '';
 };
 
-const clearBtn = document.querySelector('.all-clear');
-
 const clearAll = () => {
     prevNumber = '';
     calculationOperator = '';
     currentNumber = '0';
 };
 
-const decimal = document.querySelector('.decimal');
 
 inputDecimal = (dot) => {
     if(currentNumber.includes('.')) {
