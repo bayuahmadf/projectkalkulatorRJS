@@ -6,6 +6,7 @@ const decimal = document.querySelector('.decimal');
 const operators = document.querySelectorAll(".operator");
 const equalSign = document.querySelector('.equal-sign');
 const clearBtn = document.querySelector('.all-clear');
+// const percent = document.querySelector('.percentage');
 
 /// define  variable
 
@@ -73,6 +74,7 @@ inputDecimal = (dot) => {
     currentNumber += dot;
 };
 
+
 ///event listener
 
 numbers.forEach( (number) => {
@@ -102,3 +104,8 @@ decimal.addEventListener('click', (event) => {
     inputDecimal(event.target.value);
     updateScreen(currentNumber);
 });
+
+// percent.addEventListener('click', () => {
+//     bePercent();
+//     updateScreen(currentNumber);
+// });
